@@ -1,8 +1,10 @@
-import logo from '../images/logo.svg';
+// Migrar HTML y Sass
 
+// Sass
 import '../styles/App.scss';
 
 function App() {
+  // HTML
   return (
     <div className='page'>
       <header>
