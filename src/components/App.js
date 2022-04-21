@@ -1,9 +1,18 @@
-// Migrar HTML y Sass
+import { useState } from 'react';
 
+// (3.1) Migrar HTML y Sass
 // Sass
 import '../styles/App.scss';
 
 function App() {
+  // (3.2) Botón incrementar
+  const [numberOfErrors, setNumberOfErrors] = useState(0);
+
+  const handleNumberOfErrors = (ev) => {
+    // ev.preventDefault();
+    setNumberOfErrors(numberOfErrors + 1);
+  };
+
   // HTML
   return (
     <div className='page'>
@@ -51,7 +60,7 @@ function App() {
             />
           </form>
         </section>
-        <section className='dummy error-5'>
+        <section className={`dummy error-${numberOfErrors}`}>
           <span className='error-13 eye'></span>
           <span className='error-12 eye'></span>
           <span className='error-11 line'></span>
@@ -66,6 +75,8 @@ function App() {
           <span className='error-2 line'></span>
           <span className='error-1 line'></span>
         </section>
+
+        <button onClick={handleNumberOfErrors}>Incrementar</button>
       </main>
     </div>
   );
