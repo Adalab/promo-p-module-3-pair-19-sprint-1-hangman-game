@@ -13,6 +13,14 @@ function App() {
     setNumberOfErrors(numberOfErrors + 1);
   };
 
+  // (3.3) Controlando el input
+  const [lastLetter, setLastLetter] = useState('');
+
+  /* const handleInputLastLetter = (ev) => {
+    setLastLetter(ev.target.value);
+    console.log(lastLetter);
+  }; */
+
   // HTML
   return (
     <div className='page'>
@@ -57,6 +65,7 @@ function App() {
               type='text'
               name='last-letter'
               id='last-letter'
+              onChange={handleInputLastLetter}
             />
           </form>
         </section>
